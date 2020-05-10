@@ -1,0 +1,27 @@
+ID: produto_28
+_schema-version: '2.0'
+version: 0.0.1
+modules:
+  - name: mod_28_web
+    type: html5
+    path: mod_28_web
+    parameters:
+      app-name: modulo_28_web
+      memory: 32M
+      disk-quota: 32M
+
+  - name: mod_28_db
+    type: hdb
+    path: mod_28_db
+    requires:
+     - name: hdi_mod_28_db
+
+
+resources:
+ - name: hdi_mod_28_db
+   parameters:
+      config:
+         schema: PRODUTO_28
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
